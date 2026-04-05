@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban</title>
+
+  <!-- Conecta o arquivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Título da página -->
+<h2 id="welcome"></h2>
+<button onclick="toggleTheme()">🌙 / ☀️</button>
+<h1>Meu Kanban</h1>
+
+<!-- Container principal (o quadro) -->
+<div class="board">
+
+  <!-- Coluna 1: A fazer -->
+  <div class="column" id="todo">
+    <h2>A fazer</h2>
+
+    <button onclick="openModal('todo')">+ Adicionar</button>
+
+    <div class="task-list"></div>
+  </div>
+
+  <!-- Coluna 2: Em andamento -->
+  <div class="column" id="doing">
+    <h2>Em andamento</h2>
+
+    <button onclick="openModal('doing')">+ Adicionar</button>
+
+    <div class="task-list"></div>
+  </div>
+
+  <!-- Coluna 3: Concluído -->
+  <div class="column" id="done">
+    <h2>Concluído</h2>
+
+    <button onclick="openModal('done')">+ Adicionar</button>
+
+    <div class="task-list"></div>
+  </div>
+
+</div> <!-- 🔥 FECHA A BOARD CORRETAMENTE -->
+
+<!-- 🔥 MODAL (AGORA FORA DA BOARD) -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Nova tarefa</h2>
+
+    <input id="taskInput" placeholder="Digite a tarefa..." />
+
+    <select id="category">
+    <option>Estudo</option>
+    <option>Trabalho</option>
+    <option>Pessoal</option>
+   </select>
+
+
+    <button onclick="saveTask()">Salvar</button>
+    <button onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- Conecta o JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
